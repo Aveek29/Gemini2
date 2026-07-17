@@ -65,7 +65,6 @@ export function useChat() {
           body: JSON.stringify({ role: MessageRole.USER, content }),
         });
       } catch {
-        // Non-fatal: message still shows in UI
       }
 
       setIsStreaming(true);
@@ -150,7 +149,6 @@ export function useChat() {
               }),
             });
           } catch {
-            // Non-fatal
           }
 
           addMessage({
@@ -166,7 +164,6 @@ export function useChat() {
         setStreamingContent("");
       } catch (err: unknown) {
         if (err instanceof Error && err.name === "AbortError") {
-          // User cancelled
         } else {
           setError(
             err instanceof Error ? err.message : "An error occurred"

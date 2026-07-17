@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,9 +11,6 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => {
-    console.error("Global error:", error);
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#000000] px-4">

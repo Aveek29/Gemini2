@@ -48,8 +48,7 @@ export function Sidebar() {
       await signOut();
       router.push("/login");
       if (isMobile) setSidebarOpen(false);
-    } catch {
-      // Silent fail
+      } catch {
     }
   }, [signOut, router, isMobile, setSidebarOpen]);
 
@@ -57,7 +56,7 @@ export function Sidebar() {
 
   const sidebarContent = (
     <div className="flex flex-col h-full bg-[#171717]">
-      {/* Top bar: hamburger + new chat */}
+
       <div className="flex items-center gap-1 px-2 pt-2 pb-1">
         <button
           onClick={handleClose}
@@ -74,7 +73,7 @@ export function Sidebar() {
         </button>
       </div>
 
-      {/* Chat list */}
+
       <div className="flex-1 overflow-y-auto px-2 py-2">
         {Object.entries(groupedChats).map(([label, groupChats]) => (
           <div key={label} className="mb-3">
@@ -100,7 +99,7 @@ export function Sidebar() {
         )}
       </div>
 
-      {/* Bottom section */}
+
       <div className="border-t border-[#3c4043] px-2 py-2 space-y-0.5">
         <button
           onClick={handleSignOut}
@@ -115,7 +114,7 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Desktop sidebar */}
+
       <motion.aside
         initial={false}
         animate={{ width: isOpen ? 280 : 0, opacity: isOpen ? 1 : 0 }}
@@ -125,7 +124,7 @@ export function Sidebar() {
         <div className="w-[280px] h-full">{sidebarContent}</div>
       </motion.aside>
 
-      {/* Mobile sidebar */}
+
       <AnimatePresence>
         {isMobile && isOpen && (
           <>

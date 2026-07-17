@@ -4,8 +4,6 @@ export enum MessageRole {
   SYSTEM = "system",
 }
 
-// ─── Row Types ───────────────────────────────────────────────
-
 export interface Profile {
   id: string;
   full_name: string | null;
@@ -89,8 +87,6 @@ export interface Usage {
   updated_at: string;
 }
 
-// ─── Insert Types ────────────────────────────────────────────
-
 export interface ProfileInsert {
   id: string;
   full_name?: string | null;
@@ -162,8 +158,6 @@ export interface UsageInsert {
   total_chats?: number;
 }
 
-// ─── Update Types ────────────────────────────────────────────
-
 export interface ProfileUpdate {
   full_name?: string | null;
   avatar_url?: string | null;
@@ -212,8 +206,6 @@ export interface UsageUpdate {
   total_messages?: number;
   total_chats?: number;
 }
-
-// ─── Database Schema Type ────────────────────────────────────
 
 export interface Database {
   public: {

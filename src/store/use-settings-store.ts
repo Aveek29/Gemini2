@@ -9,11 +9,6 @@ interface Settings {
   topK: number;
   maxTokens: number;
   systemPrompt: string;
-  streamingEnabled: boolean;
-  voiceEnabled: boolean;
-  voiceId: string;
-  notificationsEnabled: boolean;
-  fontSize: "small" | "medium" | "large";
   sendOnEnter: boolean;
 }
 
@@ -31,11 +26,6 @@ const defaultSettings: Settings = {
   maxTokens: 8192,
   systemPrompt:
     "You are Gemini, a helpful, harmless, and honest AI assistant.",
-  streamingEnabled: true,
-  voiceEnabled: false,
-  voiceId: "default",
-  notificationsEnabled: true,
-  fontSize: "medium",
   sendOnEnter: true,
 };
 
